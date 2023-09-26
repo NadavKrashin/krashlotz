@@ -1,14 +1,13 @@
 {
   "files": {
     "main.css": "/krashlotz/static/css/main.073c9b0a.css",
-    "main.js": "/krashlotz/static/js/main.2bcea554.js",
-    "static/media/logo.svg": "/krashlotz/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.js": "/krashlotz/static/js/main.797e7b0c.js",
     "index.html": "/krashlotz/index.html",
     "main.073c9b0a.css.map": "/krashlotz/static/css/main.073c9b0a.css.map",
-    "main.2bcea554.js.map": "/krashlotz/static/js/main.2bcea554.js.map"
+    "main.797e7b0c.js.map": "/krashlotz/static/js/main.797e7b0c.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.2bcea554.js"
+    "static/js/main.797e7b0c.js"
   ]
 }
