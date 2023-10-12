@@ -1,27 +1,48 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "./index.css";
+import CryptoJS from "crypto-js";
+import { useLocalStorage } from "usehooks-ts";
 
 const Piklotz = () => {
   const { person } = useParams();
+  const encrypted = CryptoJS.AES.encrypt(
+    "איזה אלופה את אין עלייך בעולם הזה",
+    "secret key"
+  ).toString();
+
+  console.log(encrypted);
+  const decryptedBytes = CryptoJS.AES.decrypt(encrypted, "secret key");
+  const decryptedText = decryptedBytes.toString(CryptoJS.enc.Utf8);
+
+  console.log(decryptedText);
 
   console.log(person);
   const [isCardFliped, setIsCardFliped] = useState(false);
-  const [isPhonePressed, setIsPhonePressed] = useState(
-    !!localStorage.getItem("isPhonePressed")
+  const [isPhonePressed, setIsPhonePressed] = useLocalStorage(
+    "isPhonePressed",
+    false
   );
-  const [isLogoPressed, setIsLogoPressed] = useState(
-    !!localStorage.getItem("isLogoPressed")
+  const [isLogoPressed, setIsLogoPressed] = useLocalStorage(
+    "isLogoPressed",
+    false
   );
+  // const [isPhonePressed, setIsPhonePressed] = useState(
+  //   !!localStorage.getItem("isPhonePressed")
+  // );
+  // const [isLogoPressed, setIsLogoPressed] = useState(
+  //   !!localStorage.getItem("isLogoPressed")
+  // );
 
   const phonePress = () => {
     setIsPhonePressed(true);
-    localStorage.setItem("isPhonePressed", true);
+    // setI
+    // localStorage.setItem("isPhonePressed", true);
   };
 
   const logoPress = () => {
     setIsLogoPressed(true);
-    localStorage.setItem("isLogoPressed", true);
+    // localStorage.setItem("isLogoPressed", true);
     setIsCardFliped(true);
   };
 
