@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/krashlotz/static/css/main.e6c13ad2.css",
-    "main.js": "/krashlotz/static/js/main.991025df.js",
+    "main.css": "/krashlotz/static/css/main.136761bc.css",
+    "main.js": "/krashlotz/static/js/main.5c57a1cc.js",
+    "static/media/front.png": "/krashlotz/static/media/front.5cd33bf41fb046d52c5c.png",
+    "static/media/press-button.png": "/krashlotz/static/media/press-button.3ecdda5aec0c66dd5740.png",
     "index.html": "/krashlotz/index.html",
-    "main.e6c13ad2.css.map": "/krashlotz/static/css/main.e6c13ad2.css.map",
-    "main.991025df.js.map": "/krashlotz/static/js/main.991025df.js.map"
+    "main.136761bc.css.map": "/krashlotz/static/css/main.136761bc.css.map",
+    "main.5c57a1cc.js.map": "/krashlotz/static/js/main.5c57a1cc.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.991025df.js"
+    "static/css/main.136761bc.css",
+    "static/js/main.5c57a1cc.js"
   ]
 }
