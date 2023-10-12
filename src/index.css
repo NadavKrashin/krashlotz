@@ -1,13 +1,120 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(#ffbb00, #cd3000);
+  font-family: Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 350px;
+  height: 480px;
+  perspective: 800px;
+}
+
+.flip > .card {
+  cursor: pointer;
+  transform: rotateY(180deg);
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: transform 1500ms;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  border-radius: 5rem;
+  box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front {
+  display: flex;
+  justify-content: center;
+  background-image: url("./assets/front.png");
+  background-size: contain;
+}
+
+.back {
+  background-color: #cacaca;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+#logo {
+  width: 273px;
+  height: 273px;
+  border-radius: 50%;
+  position: relative;
+  top: 7px;
+  right: 1px;
+  animation: glowing 2000ms infinite;
+}
+
+#logo:hover {
+  cursor: pointer;
+}
+
+#phone {
+  position: absolute;
+  bottom: 20px;
+  right: 32px;
+  color: #cd3000;
+  opacity: 40%;
+  letter-spacing: 3px;
+  transform: rotateZ(-4.5deg);
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+.press {
+  width: 40px;
+  position: absolute;
+  opacity: 50%;
+  z-index: 1;
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 -10px #fff200;
+  }
+  40% {
+    box-shadow: 0 0 25px #fff200;
+  }
+  60% {
+    box-shadow: 0 0 25px #fff200;
+  }
+  100% {
+    box-shadow: 0 0 -10px #fff200;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
+      0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+      0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
 }

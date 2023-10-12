@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import Piklotz from "./Piklotz";
 import { Route, HashRouter as Router, Routes } from "react-router-dom";
 
