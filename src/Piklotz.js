@@ -47,7 +47,7 @@ const Piklotz = () => {
           )}
           <div id="logo" onClick={logoPress}></div>
           <a id="phone" href="tel:+972 546232883" onClick={phonePress}>
-            ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎{" "}
+            ‎ ‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎ ‎{" "}
           </a>
         </div>
         <div className="back" onClick={() => setIsCardFliped(false)}>
