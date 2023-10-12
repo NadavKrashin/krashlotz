@@ -5,6 +5,7 @@ import "./index.css";
 const Piklotz = () => {
   const { person } = useParams();
 
+  console.log(person);
   const [isCardFliped, setIsCardFliped] = useState(false);
   const [isPhonePressed, setIsPhonePressed] = useState(
     !!localStorage.getItem("isPhonePressed")

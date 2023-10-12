@@ -7,7 +7,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Router>
     <Routes>
-      <Route path="/" element={<Piklotz />} />
+      <Route path="/:person" element={<Piklotz />} />
     </Routes>
   </Router>
 );
