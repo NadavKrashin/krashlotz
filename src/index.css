@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: letter-content-font;
+  src: url(shesek-regular-fm.otf);
+}
+
+@font-face {
+  font-family: letter-title-font;
+  src: url(avigul-bold-fm.otf);
+}
+
 body {
   height: 100vh;
   overflow: hidden;
@@ -15,9 +25,10 @@ body {
 }
 
 .container {
-  width: 350px;
-  height: 480px;
+  width: 375px;
+  height: 597px;
   perspective: 800px;
+  margin-bottom: 95px;
 }
 
 .flip > .card {
@@ -37,7 +48,7 @@ body {
 .back {
   height: 100%;
   width: 100%;
-  border-radius: 5rem;
+  border-radius: 31px;
   box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
   position: absolute;
   backface-visibility: hidden;
@@ -46,27 +57,60 @@ body {
 .front {
   display: flex;
   justify-content: center;
-  background-image: url("./assets/front.png");
+  background-image: url("./assets/front_code.jpg");
   background-size: contain;
 }
 
 .back {
-  background-color: #cacaca;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   transform: rotateY(180deg);
   display: flex;
+  background-image: url("./assets/back_code.jpg");
+  background-size: contain;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5rem;
+  direction: rtl;
+  padding: 0 15px;
+}
+
+#letter {
+  position: relative;
+  color: white;
+  bottom: 25px;
+}
+
+#letter-title {
+  font-family: letter-title-font;
+}
+
+#letter-content {
+  font-family: letter-content-font;
+}
+
+.text-xs {
+  font-size: 16px;
+}
+.text-sm {
+  font-size: 18px;
+}
+.text-md {
+  font-size: 21px;
+}
+.text-lg {
+  font-size: 24px;
+}
+
+.text-xl {
+  font-size: 27px;
 }
 
 #logo {
-  width: 273px;
-  height: 273px;
+  width: 304.5px;
+  height: 304.5px;
   border-radius: 50%;
   position: relative;
-  top: 7px;
-  right: 1px;
+  top: 19px;
   animation: glowing 2000ms infinite;
 }
 
@@ -76,8 +120,8 @@ body {
 
 #phone {
   position: absolute;
-  bottom: 20px;
-  right: 32px;
+  bottom: 68px;
+  right: 45px;
   color: #cd3000;
   opacity: 40%;
   letter-spacing: 3px;
