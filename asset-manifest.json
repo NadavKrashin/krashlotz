@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/krashlotz/static/css/main.5b3b4dc3.css",
-    "main.js": "/krashlotz/static/js/main.1dac5ce5.js",
+    "main.css": "/krashlotz/static/css/main.e3c7d6c8.css",
+    "main.js": "/krashlotz/static/js/main.c382ff0d.js",
     "static/media/front_code.jpg": "/krashlotz/static/media/front_code.02f1658d1c14215755bd.jpg",
     "static/media/back_code.jpg": "/krashlotz/static/media/back_code.89af9622ade21d0bd1a1.jpg",
+    "static/media/amosi.JPG": "/krashlotz/static/media/amosi.a871b9343822699f090d.JPG",
     "static/media/gal.jpg": "/krashlotz/static/media/gal.005cfe2699996295dcc0.jpg",
     "static/media/shesek-regular-fm.otf": "/krashlotz/static/media/shesek-regular-fm.622f0790b171d266a7a0.otf",
     "static/media/avigul-bold-fm.otf": "/krashlotz/static/media/avigul-bold-fm.b71b8c4f1f3cca6d7850.otf",
     "index.html": "/krashlotz/index.html",
-    "main.5b3b4dc3.css.map": "/krashlotz/static/css/main.5b3b4dc3.css.map",
-    "main.1dac5ce5.js.map": "/krashlotz/static/js/main.1dac5ce5.js.map"
+    "main.e3c7d6c8.css.map": "/krashlotz/static/css/main.e3c7d6c8.css.map",
+    "main.c382ff0d.js.map": "/krashlotz/static/js/main.c382ff0d.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b3b4dc3.css",
-    "static/js/main.1dac5ce5.js"
+    "static/css/main.e3c7d6c8.css",
+    "static/js/main.c382ff0d.js"
   ]
 }
