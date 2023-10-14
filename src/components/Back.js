@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { FaArrowCircleLeft, FaImage } from "react-icons/fa";
-import { MdTextSnippet } from "react-icons/md";
+import { FaArrowCircleLeft } from "react-icons/fa";
+import { MdTextSnippet, MdImage, MdImageNotSupported } from "react-icons/md";
 const chooseFontSizeClass = (amountOfWords) => {
   let fontSize;
 
@@ -62,23 +62,17 @@ const Back = ({
             transform: "rotateY(180deg)",
           }}
           className="pressable back-icon"
-          color="fff"
-          fontSize={40}
           onClick={() => setIsCardFliped(false)}
         />
         {isImgShown ? (
-          <MdTextSnippet
+          <MdImageNotSupported
             className="pressable back-icon"
-            color="fff"
-            fontSize={50}
-            onClick={() => setIsImgShown((isImageShown) => !isImageShown)}
+            onClick={() => setIsImgShown(false)}
           />
         ) : (
-          <FaImage
+          <MdImage
             className="pressable back-icon"
-            color="fff"
-            fontSize={50}
-            onClick={() => setIsImgShown((isImageShown) => !isImageShown)}
+            onClick={() => setIsImgShown(true)}
           />
         )}
       </footer>

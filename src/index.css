@@ -75,12 +75,14 @@ body {
 
 #back-footer {
   position: absolute;
+  font-size: 40px;
+  color: white;
   width: 50%;
   bottom: 30px;
   right: 20px;
   display: flex;
   align-items: center;
-  gap: 25%;
+  gap: 10%;
 }
 
 #letter {
