@@ -37,10 +37,10 @@ const Back = ({
   return (
     <div className="back">
       <img
-        src={require("../assets/images/gal.jpg")}
+        src={require("../assets/images/amosi.JPG")}
         alt="with person"
         id="photo"
-        className={isImgShown ? "fly-in" : "fly-out"}
+        className={isImgShown && "fly-in"}
       />
       <section id="letter">
         <h1

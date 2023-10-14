@@ -9,7 +9,7 @@ import Back from "./Back";
 
 const Piklotz = () => {
   const { person } = useParams();
-  const [isCardFliped, setIsCardFliped] = useState(true);
+  const [isCardFliped, setIsCardFliped] = useState(false);
   const [isPhonePressed, setIsPhonePressed] = useLocalStorage(
     "isPhonePressed",
     false

@@ -153,38 +153,11 @@ body {
   border-radius: 10px;
   outline: 5px solid white;
   top: -100%;
+  transition: top 1000ms ease-in-out;
 }
 
 .fly-in {
   top: 20px !important;
-  animation: fly-in-animation 0.5s ease-in-out;
-}
-
-.fly-out {
-  animation: fly-out-animation 0.5s ease-in-out;
-}
-
-@keyframes fly-in-animation {
-  0% {
-    transform: translateY(-200%);
-    top: -100%;
-    opacity: 0%;
-  }
-  100% {
-    opacity: 100%;
-    top: 20px;
-  }
-}
-
-@keyframes fly-out-animation {
-  0% {
-    opacity: 100%;
-    top: 20px;
-  }
-  100% {
-    opacity: 0%;
-    top: -100%;
-  }
 }
 
 .press {
