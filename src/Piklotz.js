@@ -7,7 +7,7 @@ import letters from "./letters.json";
 
 const Piklotz = () => {
   const { person } = useParams();
-  const [isCardFliped, setIsCardFliped] = useState(true);
+  const [isCardFliped, setIsCardFliped] = useState(false);
   const [isPhonePressed, setIsPhonePressed] = useLocalStorage(
     "isPhonePressed",
     false
@@ -16,20 +16,12 @@ const Piklotz = () => {
     "isLogoPressed",
     false
   );
-  // const encrypted = CryptoJS.AES.encrypt(`הפעם הראשונה ששמעתי עלייך זה כשסוואמפ אמר לי בסגל הקודם שזכיתי לקבל אותך בצוות ושאת אלופה, ודוגרי אני לא מבין אותו היית די בינונית כאילו…
-  // סתם סתם תרגמת את האתר יפה…
-  // ביקשת לתכנת איתי אז ברור שהייתי חייב להביא אותך למערכת הכי טובה בבסמחח. תבטיחי לי שאת מתכנת לשם מעבר ללהוסיף את השם שלך אוקיי? ואיך אפשר לשכוח את העיצוב המהממם של קראש אין?
-  // טוב טוב עכשיו ברצינות אני חולהההה עלייך בטירוף באמת באמת. רציתי ממש שתגיעי לסגל שלנו ואיזה מזל שזה באמת קרה.
-  // את שוברת מצחוק ומרימה את האווירה בטירוף, ואת לא מפסיקה ללמוד ולהשתפר כי רואים כמה איכפת לך. רצית לעשות את העיצוב של קראש אין ולקחת את זה באמת ברצינות ולמדת מעצמך וזה רק מוכיח את הטענה שלי. גם אני כשהגעתי לבסמח הייתי לחוצי ומוודא הכל 20 פעם מראש, מנסח דברים שבא לי להגיד בnotes ומקווה לא לפשל, ובגלל זה את מזכירה לי את עצמי בקטע הזה וזה חמוד ברמות. את תראי שסגל הבא וככל שהזמן יעבור הדברים יבואו לך יותר בקלות ואת תיהי מעולה.
-  // אני מקנא בסגל שקיבל אותך, ואני אתגעגע להחתים אותך ולהעיף אותך מהכיסא שלי, אבל בטוח שאשמע ממך עוד.`,
-  //   "secret key"
-  // ).toString();
 
-  // console.log(encrypted);
-  const decryptedBytes = CryptoJS.AES.decrypt(
-    letters[person].letter,
-    "secret key"
-  );
+  // Add useEffect from here
+  const encrypted = CryptoJS.AES.encrypt(`נסיון`, "secret key").toString();
+  // const encrypted = letters[person].letter;
+
+  const decryptedBytes = CryptoJS.AES.decrypt(encrypted, "secret key");
   const decryptedLetter = decryptedBytes.toString(CryptoJS.enc.Utf8);
   const startOfLetter = letters[person].start_of_letter;
 
@@ -98,13 +90,13 @@ const Piklotz = () => {
         <div className="back" onClick={() => setIsCardFliped(false)}>
           <section id="letter">
             <h1
-              class={chooseFontSizeClass(amountOfWordsInLetter)}
+              className={chooseFontSizeClass(amountOfWordsInLetter)}
               id="letter-title"
             >
               {startOfLetter}
             </h1>
             <p
-              class={chooseFontSizeClass(amountOfWordsInLetter)}
+              className={chooseFontSizeClass(amountOfWordsInLetter)}
               id="letter-content"
             >
               {decryptedLetter}
