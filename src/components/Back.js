@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaArrowCircleLeft } from "react-icons/fa";
-import { MdTextSnippet, MdImage, MdImageNotSupported } from "react-icons/md";
+import { MdImage, MdImageNotSupported } from "react-icons/md";
 const chooseFontSizeClass = (amountOfWords) => {
   let fontSize;
 
