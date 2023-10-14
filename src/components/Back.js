@@ -27,33 +27,33 @@ const chooseFontSizeClass = (amountOfWords) => {
 
 const Back = ({
   setIsCardFliped,
-  amountOfWordsInLetter,
-  letterTitle,
-  letterContent,
+  personData: { start_of_letter, letter, img },
 }) => {
   const [isImgShown, setIsImgShown] = useState(false);
-
+  console.log(img);
+  const amountOfWordsInLetter = letter.split(" ").length;
+  console.log(amountOfWordsInLetter);
   console.log(chooseFontSizeClass(amountOfWordsInLetter));
   return (
     <div className="back">
       <img
-        src={require("../assets/images/amosi.JPG")}
+        src={require(`../assets/images/${img}`)}
         alt="with person"
         id="photo"
-        className={isImgShown && "fly-in"}
+        className={isImgShown ? "fly-in" : ""}
       />
       <section id="letter">
         <h1
           className={chooseFontSizeClass(amountOfWordsInLetter)}
           id="letter-title"
         >
-          {letterTitle}
+          {start_of_letter}
         </h1>
         <p
           className={chooseFontSizeClass(amountOfWordsInLetter)}
           id="letter-content"
         >
-          {letterContent}
+          {letter}
         </p>
       </section>
       <footer id="back-footer">

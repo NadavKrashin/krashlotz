@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import "../index.css";
 import CryptoJS from "crypto-js";
@@ -19,13 +19,22 @@ const Piklotz = () => {
     false
   );
 
-  // const encrypted = CryptoJS.AES.encrypt(`נסיון`, "secret key").toString();
-  const encrypted = letters[person].letter;
+  // const encrypted = CryptoJS.AES.encrypt("נדב", "secret key").toString();
 
-  const decryptedBytes = CryptoJS.AES.decrypt(encrypted, "secret key");
-  const letterContent = decryptedBytes.toString(CryptoJS.enc.Utf8);
-  const letterTitle = letters[person].start_of_letter;
-  const amountOfWordsInLetter = letterContent.split(" ").length;
+  const decryptLetter = useCallback((encryptedLetter) => {
+    const decryptedLetterBytes = CryptoJS.AES.decrypt(
+      encryptedLetter,
+      "secret key"
+    );
+
+    return decryptedLetterBytes.toString(CryptoJS.enc.Utf8);
+  }, []);
+
+  const personData = useMemo(() => {
+    const data = letters[person];
+
+    return { ...data, letter: decryptLetter(data.letter) };
+  }, [person, decryptLetter]);
 
   const phonePress = () => {
     setIsPhonePressed(true);
@@ -36,8 +45,6 @@ const Piklotz = () => {
     setIsCardFliped(true);
   };
 
-  console.log(amountOfWordsInLetter);
-
   return (
     <div className={`container ${isCardFliped ? "flip" : ""}`}>
       <div className="card">
@@ -47,12 +54,7 @@ const Piklotz = () => {
           logoPress={logoPress}
           phonePress={phonePress}
         />
-        <Back
-          setIsCardFliped={setIsCardFliped}
-          amountOfWordsInLetter={amountOfWordsInLetter}
-          letterTitle={letterTitle}
-          letterContent={letterContent}
-        />
+        <Back setIsCardFliped={setIsCardFliped} personData={personData} />
       </div>
     </div>
   );
