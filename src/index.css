@@ -166,9 +166,9 @@ body {
 
 .press {
   color: white;
-  font-size: 35px;
+  font-size: 65px;
   position: absolute;
-  opacity: 80%;
+  opacity: 100%;
   z-index: 1;
 }
 

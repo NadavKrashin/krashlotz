@@ -6,13 +6,13 @@ const Front = ({ isLogoPressed, isPhonePressed, logoPress, phonePress }) => {
       {!isLogoPressed && (
         <FaHandPointRight
           className="press"
-          style={{ transform: "rotateZ(30deg)", left: 32, top: 60 }}
+          style={{ transform: "rotateZ(30deg)", left: 40, top: 30 }}
         />
       )}
       {!isPhonePressed && (
         <FaHandPointLeft
           className="press"
-          style={{ transform: "rotateZ(30deg)", right: 10, bottom: 48 }}
+          style={{ transform: "rotateZ(50deg)", right: 0, bottom: 10 }}
         />
       )}
       <div id="logo" className="pressable" onClick={logoPress}></div>
