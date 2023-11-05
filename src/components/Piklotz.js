@@ -19,7 +19,6 @@ const Piklotz = () => {
     false
   );
 
-  // const encrypted = CryptoJS.AES.encrypt("נדב", "secret key").toString();
   const decryptLetter = useCallback((encryptedLetter) => {
     const decryptedLetterBytes = CryptoJS.AES.decrypt(
       encryptedLetter,

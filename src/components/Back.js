@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { MdImage, MdImageNotSupported } from "react-icons/md";
 const chooseFontSizeClass = (amountOfWords) => {
@@ -8,7 +8,7 @@ const chooseFontSizeClass = (amountOfWords) => {
     case amountOfWords <= 90:
       fontSize = "xl";
       break;
-    case amountOfWords < 120:
+    case amountOfWords < 110:
       fontSize = "lg";
       break;
     case amountOfWords < 150:
@@ -30,29 +30,26 @@ const Back = ({
   personData: { start_of_letter, letter, img },
 }) => {
   const [isImgShown, setIsImgShown] = useState(false);
-  console.log(img);
-  const amountOfWordsInLetter = letter.split(" ").length;
-  console.log(amountOfWordsInLetter);
-  console.log(chooseFontSizeClass(amountOfWordsInLetter));
+  const fontSizeClass = useMemo(
+    () => chooseFontSizeClass(letter.split(" ").length),
+    [letter]
+  );
+
   return (
     <div className="back">
-      <img
-        src={require(`../assets/images/${img}`)}
-        alt="with person"
-        id="photo"
-        className={isImgShown ? "fly-in" : ""}
-      />
+      {img && (
+        <img
+          src={require(`../assets/images/${img}`)}
+          alt="with person"
+          id="photo"
+          className={isImgShown ? "fly-in" : ""}
+        />
+      )}
       <section id="letter">
-        <h1
-          className={chooseFontSizeClass(amountOfWordsInLetter)}
-          id="letter-title"
-        >
+        <h1 className={fontSizeClass} id="letter-title">
           {start_of_letter}
         </h1>
-        <p
-          className={chooseFontSizeClass(amountOfWordsInLetter)}
-          id="letter-content"
-        >
+        <p className={fontSizeClass} id="letter-content">
           {letter}
         </p>
       </section>
@@ -64,16 +61,20 @@ const Back = ({
           className="pressable back-icon"
           onClick={() => setIsCardFliped(false)}
         />
-        {isImgShown ? (
-          <MdImageNotSupported
-            className="pressable back-icon"
-            onClick={() => setIsImgShown(false)}
-          />
-        ) : (
-          <MdImage
-            className="pressable back-icon"
-            onClick={() => setIsImgShown(true)}
-          />
+        {img && (
+          <>
+            {isImgShown ? (
+              <MdImageNotSupported
+                className="pressable back-icon"
+                onClick={() => setIsImgShown(false)}
+              />
+            ) : (
+              <MdImage
+                className="pressable back-icon"
+                onClick={() => setIsImgShown(true)}
+              />
+            )}
+          </>
         )}
       </footer>
     </div>
