@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/krashlotz/static/css/main.98776e4c.css",
-    "main.js": "/krashlotz/static/js/main.4aff3f83.js",
+    "main.css": "/krashlotz/static/css/main.2d586005.css",
+    "main.js": "/krashlotz/static/js/main.3ee14696.js",
     "static/media/dan.jpg": "/krashlotz/static/media/dan.11319c780aaac9d66168.jpg",
+    "static/media/noam.jpg": "/krashlotz/static/media/noam.2be0b91a491c2b9a51c2.jpg",
     "static/media/ventura.jpg": "/krashlotz/static/media/ventura.bf660030dfc004259d74.jpg",
     "static/media/yarden.jpg": "/krashlotz/static/media/yarden.602231c70f9c8a158e23.jpg",
     "static/media/or.jpg": "/krashlotz/static/media/or.b4e41675e8329a08cd39.jpg",
@@ -38,11 +39,11 @@
     "static/media/avigul-bold-fm.otf": "/krashlotz/static/media/avigul-bold-fm.b71b8c4f1f3cca6d7850.otf",
     "static/media/roee.jpg": "/krashlotz/static/media/roee.8b3bf2cd5b1965ed5a7c.jpg",
     "index.html": "/krashlotz/index.html",
-    "main.98776e4c.css.map": "/krashlotz/static/css/main.98776e4c.css.map",
-    "main.4aff3f83.js.map": "/krashlotz/static/js/main.4aff3f83.js.map"
+    "main.2d586005.css.map": "/krashlotz/static/css/main.2d586005.css.map",
+    "main.3ee14696.js.map": "/krashlotz/static/js/main.3ee14696.js.map"
   },
   "entrypoints": [
-    "static/css/main.98776e4c.css",
-    "static/js/main.4aff3f83.js"
+    "static/css/main.2d586005.css",
+    "static/js/main.3ee14696.js"
   ]
 }
